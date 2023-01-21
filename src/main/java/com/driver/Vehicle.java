@@ -9,8 +9,8 @@ public class Vehicle {
 
     public Vehicle(String name) {
         this.name=name;
-        this.currentDirection=0;
-        this.currentSpeed=0;
+        currentDirection=0;
+        currentSpeed=0;
 
     }
 
@@ -46,7 +46,7 @@ public class Vehicle {
 
     public void move(int speed, int direction){
         //set the values of currentSpeed and currentDirection
-        currentDirection=speed;
+        currentSpeed=speed;
         currentDirection=direction;
         System.out.println("move method called - The speed is changed to: " + currentSpeed + ", and the direction is changed to: " + currentDirection + " degrees");
     }
