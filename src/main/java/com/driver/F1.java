@@ -1,11 +1,13 @@
 package com.driver;
 
 public class F1 extends Car {
+    String name;
+    Boolean isManual;
 
 
     public F1(String name, boolean isManual) {
         //Use arbitrary values for parameters which are not mentioned
-        super(name, 4, 2, 6, isManual, "sports", 2);
+        super(name, 4, 2, 6, isManual, name, 2);
 
 
     }
@@ -25,9 +27,8 @@ public class F1 extends Car {
         if (newSpeed == 0) {
                 //Stop the car, set gear as 1
                 changeGear(1);
-            }
-        //for all other cases, change the gear accordingly
-        if (newSpeed >= 1 && newSpeed <= 50) {
+        }
+        else if (newSpeed >= 1 && newSpeed <= 50) {
             changeGear(1);
         }
         else if (newSpeed >= 51 && newSpeed <= 100) {
@@ -42,14 +43,11 @@ public class F1 extends Car {
         else if (newSpeed >= 201 && newSpeed <= 250) {
             changeGear(5);
         }
-        else {
+        else if(newSpeed>250) {
             changeGear(6);
         }
-
-            //for all other cases, change the gear accordingly
-
+        //for all other cases, change the gear accordingly
         if (newSpeed > 0) {
-
             changeSpeed(newSpeed, getCurrentDirection());
 
         }
